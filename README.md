@@ -1,4 +1,4 @@
-# Angular7Testing
+# Angular 7.0 Unit Testing Examples
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3.
 
