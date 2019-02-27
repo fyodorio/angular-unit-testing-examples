@@ -12,6 +12,7 @@
             "element",
             "app",
             "kebab-case"
-        ]
+        ],
+		"indent": [true, "tabs", 4]
     }
 }
