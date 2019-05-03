@@ -5,7 +5,7 @@ import { DebugElement } from '@angular/core';
 
 import { TodosComponent } from './todos.component';
 
-//NOTE: I've deliberately excluded this suite from running
+// NOTE: I've deliberately excluded this suite from running
 // because the test will fail. This is because we have not
 // provided the TodoService as a dependency to TodosComponent.
 //

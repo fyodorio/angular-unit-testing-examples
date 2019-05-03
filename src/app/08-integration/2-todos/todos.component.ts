@@ -17,13 +17,15 @@ export class TodosComponent implements OnInit {
 	}
 
 	add() {
-		var newTodo = { title: '... ' };
+		const newTodo = { title: '... ' };
 		this.service
 			.add(newTodo)
 			.subscribe(t => this.todos.push(t), err => (this.message = err));
 	}
 
 	delete(id) {
-		if (confirm('Are you sure?')) this.service.delete(id).subscribe();
+		if (confirm('Are you sure?')) {
+			this.service.delete(id).subscribe();
+		}
 	}
 }

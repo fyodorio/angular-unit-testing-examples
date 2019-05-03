@@ -11,7 +11,9 @@ export class UserDetailsComponent implements OnInit {
 
 	ngOnInit() {
 		this.route.params.subscribe(p => {
-			if (p['id'] === 0) this.router.navigate(['not-found']);
+			if (p['id'] === 0) {
+				this.router.navigate(['not-found']);
+			}
 		});
 	}
 

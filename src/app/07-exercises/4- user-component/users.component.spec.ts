@@ -13,7 +13,7 @@ describe('UsersComponent', () => {
 	});
 
 	it('should set users property with the users retrieved from the server', () => {
-		let users = [1, 2, 3];
+		const users = [1, 2, 3];
 		spyOn(service, 'getUsers').and.returnValue(Observable.from([users]));
 
 		component.ngOnInit();
@@ -49,7 +49,7 @@ describe('UsersComponent', () => {
 
 		it('should call the server to delete the selected user if the user confirms deletion', () => {
 			spyOn(window, 'confirm').and.returnValue(true);
-			let spy = spyOn(service, 'deleteUser').and.returnValue(
+			const spy = spyOn(service, 'deleteUser').and.returnValue(
 				Observable.empty()
 			);
 
@@ -60,7 +60,7 @@ describe('UsersComponent', () => {
 
 		it('should NOT call the server to delete the selected user if the user cancels', () => {
 			spyOn(window, 'confirm').and.returnValue(false);
-			let spy = spyOn(service, 'deleteUser').and.returnValue(
+			const spy = spyOn(service, 'deleteUser').and.returnValue(
 				Observable.empty()
 			);
 
@@ -85,7 +85,7 @@ describe('UsersComponent', () => {
 
 		it('should display an error if the call to the server fails', () => {
 			spyOn(window, 'confirm').and.returnValue(true);
-			let spy = spyOn(window, 'alert').and.callFake(() => {});
+			const spy = spyOn(window, 'alert').and.callFake(() => {});
 			spyOn(service, 'deleteUser').and.returnValue(
 				Observable.throw('error')
 			);

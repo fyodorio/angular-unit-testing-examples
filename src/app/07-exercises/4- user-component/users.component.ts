@@ -13,7 +13,7 @@ export class UsersComponent implements OnInit {
 
 	deleteUser(user) {
 		if (confirm('Are you sure you want to delete ' + user.name + '?')) {
-			var index = this.users.indexOf(user);
+			const index = this.users.indexOf(user);
 			this.users.splice(index, 1);
 
 			this._service.deleteUser(user.id).subscribe(null, err => {

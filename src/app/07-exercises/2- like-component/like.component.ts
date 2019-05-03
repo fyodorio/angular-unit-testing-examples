@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-	selector: 'like',
+	selector: 'app-like',
 	template: `
 		<i
 			class="glyphicon glyphicon-heart"
