@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from './user.service';
 
 export class UsersComponent implements OnInit {
-	users: any[];
+	users: any /*[]*/;
 
 	constructor(private _service: UserService) {}
 

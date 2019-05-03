@@ -7,7 +7,7 @@ import { TodoService } from './todo.service';
 	styleUrls: ['./todos.component.css']
 })
 export class TodosComponent implements OnInit {
-	todos: any[] = [];
+	todos: any /*[] = []*/;
 	message;
 
 	constructor(private service: TodoService) {}
