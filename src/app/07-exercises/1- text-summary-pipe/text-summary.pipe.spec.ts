@@ -1,6 +1,6 @@
 import { TextSummaryPipe } from './text-summary.pipe';
 
-describe('TextSummaryPipe', () => {
+xdescribe('TextSummaryPipe', () => {
 	let pipe: TextSummaryPipe;
 
 	beforeEach(() => {
