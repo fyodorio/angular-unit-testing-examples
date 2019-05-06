@@ -38,7 +38,12 @@ describe('UserDetailsComponent', () => {
 		fixture.detectChanges();
 	});
 
-	it('should create', () => {
-		expect(component).toBeTruthy();
+	it('should redirect the user to the users page after saving', () => {
+		const router = TestBed.get(Router);
+		const spy = spyOn(router, 'navigate');
+
+		component.save();
+
+		expect(spy).toHaveBeenCalledWith(['users']);
 	});
 });
