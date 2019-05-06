@@ -30,7 +30,7 @@ describe('TodosComponent', () => {
 	it('should load todos from the server', () => {
 		const service = TestBed.get(TodoService);
 		// fixture.debugElement.injector.get(TodoService); // - for cases when dependencies aren't provided
-		spyOn(service, 'getTodos').and.returnValue(of([1, 2, 3] ));
+		spyOn(service, 'getTodos').and.returnValue(of([1, 2, 3]));
 
 		fixture.detectChanges();
 

@@ -5,7 +5,8 @@ import { Directive, Input, ElementRef, OnChanges } from '@angular/core';
 })
 export class HighlightDirective implements OnChanges {
 	defaultColor = 'yellow';
-	@Input('appHighlight') bgColor: string;
+	@Input('appHighlight')
+	bgColor: string;
 
 	constructor(private el: ElementRef) {}
 

@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserDetailsComponent } from './user-details.component';
 import { ActivatedRoute, Router } from '@angular/router';
-import {EMPTY, Observable} from 'rxjs';
+import { EMPTY, Observable } from 'rxjs';
 
 class RouterStub {
 	navigate(params) {}
