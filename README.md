@@ -2,6 +2,8 @@
 
 I use this project to test different concepts of unit testing the Angular applications. BTW, you can find decent unit testing styleguide for Angular in corresponding [repository nearby](https://github.com/loenko/unit-testing-styleguide).
 
+![unit-testing](https://cdn-images-1.medium.com/max/1600/1*9S01ivk7N1fkh4Tj3MqZgg.gif)
+
 ## Getting started
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli). Please refer to the documentation to learn about its main commands and features.
