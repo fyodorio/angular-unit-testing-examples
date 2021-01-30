@@ -3,21 +3,22 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular7-testing": {
+    "angular11-testing-examples": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "styleext": "scss"
+          "style": "scss"
         }
       },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular7-testing",
+            "aot": true,
+            "outputPath": "dist/angular11-testing-examples",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -42,7 +43,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -53,6 +53,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
@@ -61,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular7-testing:build"
+            "browserTarget": "angular11-testing-examples:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular7-testing:build:production"
+              "browserTarget": "angular11-testing-examples:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular7-testing:build"
+            "browserTarget": "angular11-testing-examples:build"
           }
         },
         "test": {
@@ -106,7 +110,7 @@
         }
       }
     },
-    "angular7-testing-e2e": {
+    "angular11-testing-examples-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +119,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular7-testing:serve"
+            "devServerTarget": "angular11-testing-examples:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular7-testing:serve:production"
+              "devServerTarget": "angular11-testing-examples:serve:production"
             }
           }
         },
@@ -135,5 +139,5 @@
       }
     }
   },
-  "defaultProject": "angular7-testing"
+  "defaultProject": "angular11-testing-examples"
 }

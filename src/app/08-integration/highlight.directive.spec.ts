@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { HighlightDirective } from './highlight.directive';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -14,11 +14,13 @@ class DirectiveHostComponent {}
 describe('HighlightDirective', () => {
 	let fixture: ComponentFixture<DirectiveHostComponent>;
 
-	beforeEach(async(() => {
-		TestBed.configureTestingModule({
-			declarations: [DirectiveHostComponent, HighlightDirective]
-		}).compileComponents();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [DirectiveHostComponent, HighlightDirective]
+			}).compileComponents();
+		})
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(DirectiveHostComponent);

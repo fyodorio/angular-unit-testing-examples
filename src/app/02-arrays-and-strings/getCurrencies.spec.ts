@@ -1,4 +1,4 @@
-import {getCurrencies} from './getCurrencies';
+import { getCurrencies } from './getCurrencies';
 
 xdescribe('getCurrencies', () => {
 	it('Should return the supported currencies', () => {

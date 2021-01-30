@@ -1,4 +1,4 @@
-import {VoteComponent} from './vote.component';
+import { VoteComponent } from './vote.component';
 
 xdescribe('VoteComponent', () => {
 	let component: VoteComponent;
@@ -16,6 +16,6 @@ xdescribe('VoteComponent', () => {
 	it('Should decrement totalVotes when downvoted', () => {
 		component.downVote();
 
-		 expect(component.totalVotes).toBe(-1);
+		expect(component.totalVotes).toBe(-1);
 	});
 });

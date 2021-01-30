@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UserDetailsComponent } from './user-details.component';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -8,7 +8,7 @@ class RouterStub {
 	navigate(params) {}
 }
 
-class ActivatedRouteStub {
+class ActivatedRouteStub implements Partial<ActivatedRoute> {
 	private subject = new Subject();
 
 	// params: Observable<any> = EMPTY;
@@ -25,21 +25,23 @@ describe('UserDetailsComponent', () => {
 	let component: UserDetailsComponent;
 	let fixture: ComponentFixture<UserDetailsComponent>;
 
-	beforeEach(async(() => {
-		TestBed.configureTestingModule({
-			declarations: [UserDetailsComponent],
-			providers: [
-				{
-					provide: Router,
-					useClass: RouterStub
-				},
-				{
-					provide: ActivatedRoute,
-					useClass: ActivatedRouteStub
-				}
-			]
-		}).compileComponents();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				declarations: [UserDetailsComponent],
+				providers: [
+					{
+						provide: Router,
+						useClass: RouterStub
+					},
+					{
+						provide: ActivatedRoute,
+						useClass: ActivatedRouteStub
+					}
+				]
+			}).compileComponents();
+		})
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(UserDetailsComponent);
@@ -48,7 +50,7 @@ describe('UserDetailsComponent', () => {
 	});
 
 	it('should redirect the user to the users page after saving', () => {
-		const router = TestBed.get(Router);
+		const router = TestBed.inject(Router);
 		const spy = spyOn(router, 'navigate');
 
 		component.save();
@@ -57,9 +59,11 @@ describe('UserDetailsComponent', () => {
 	});
 
 	it('should navigate the user to the not found page when an invalid user ID is passed', () => {
-		const router = TestBed.get(Router);
+		const router = TestBed.inject(Router);
 		const spy = spyOn(router, 'navigate');
-		const route: ActivatedRouteStub = TestBed.get(ActivatedRoute);
+		const route: ActivatedRouteStub = (<unknown>(
+			TestBed.inject(ActivatedRoute)
+		)) as ActivatedRouteStub;
 
 		route.push({ id: 0 });
 

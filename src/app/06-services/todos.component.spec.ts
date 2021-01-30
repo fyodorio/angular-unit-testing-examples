@@ -1,6 +1,6 @@
-import {TodosComponent} from './todos.component';
-import {TodoService} from './todo.service';
-import {EMPTY, of, throwError} from 'rxjs';
+import { TodosComponent } from './todos.component';
+import { TodoService } from './todo.service';
+import { EMPTY, of, throwError } from 'rxjs';
 
 xdescribe('TodosComponent', () => {
 	let component: TodosComponent;
@@ -13,12 +13,12 @@ xdescribe('TodosComponent', () => {
 
 	it('should set todos property with the items returned from the server', () => {
 		const todos = [
-			{id: 1, title: 'a'},
-			{id: 2, title: 'b'},
-			{id: 3, title: 'c'}
+			{ id: 1, title: 'a' },
+			{ id: 2, title: 'b' },
+			{ id: 3, title: 'c' }
 		];
 		spyOn(service, 'getTodos').and.callFake(() => {
-			return of(todos);
+			return of([JSON.stringify(todos)]);
 		});
 
 		component.ngOnInit();
@@ -27,8 +27,8 @@ xdescribe('TodosComponent', () => {
 	});
 
 	it('should call the server to save the changes when a new todo item is added', () => {
-		const spy = spyOn(service, 'add').and.callFake(t => {
-			 return of ();
+		const spy = spyOn(service, 'add').and.callFake(_ => {
+			return of();
 		});
 
 		component.add();
@@ -38,8 +38,8 @@ xdescribe('TodosComponent', () => {
 
 	it('should add the new todo returned from the server', () => {
 		const todo = { id: 1 };
-		const spy = spyOn(service, 'add').and.callFake(t => {
-			return of (todo);
+		const spy = spyOn(service, 'add').and.callFake(_ => {
+			return of(JSON.stringify(todo));
 		});
 
 		component.add();

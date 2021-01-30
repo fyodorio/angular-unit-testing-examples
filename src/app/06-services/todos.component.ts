@@ -1,22 +1,25 @@
-import {TodoService} from './todo.service';
-import {OnInit} from '@angular/core';
+import { TodoService } from './todo.service';
+import { OnInit, Component, NgModule } from '@angular/core';
 
+@Component({
+	template: ``
+})
 export class TodosComponent implements OnInit {
 	todos: any[] = [];
 	message;
 
-	constructor(private service: TodoService) {
-	}
+	constructor(private service: TodoService) {}
 
 	ngOnInit() {
 		this.service.getTodos().subscribe(t => (this.todos = t));
 	}
 
 	add() {
-		const newTodo = {title: '... '};
-		this.service
-			.add(newTodo)
-			.subscribe(t => this.todos.push(t), err => (this.message = err));
+		const newTodo = { title: '... ' };
+		this.service.add(newTodo).subscribe(
+			t => this.todos.push(t),
+			err => (this.message = err)
+		);
 	}
 
 	delete(id) {
@@ -25,3 +28,9 @@ export class TodosComponent implements OnInit {
 		}
 	}
 }
+
+@NgModule({
+	declarations: [TodosComponent],
+	providers: [TodoService]
+})
+export class TodosModule {}

@@ -1,4 +1,4 @@
-import {VoteComponent} from './vote.component';
+import { VoteComponent } from './vote.component';
 
 xdescribe('VoteComponent', () => {
 	let component: VoteComponent;
@@ -9,7 +9,7 @@ xdescribe('VoteComponent', () => {
 
 	it('should raise voteChanged event when upvoted', () => {
 		let totalVotes = null;
-		component.voteChanged.subscribe(tv => totalVotes = tv);
+		component.voteChanged.subscribe(tv => (totalVotes = tv));
 
 		component.upVote();
 

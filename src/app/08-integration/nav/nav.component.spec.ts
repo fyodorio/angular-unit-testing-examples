@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { NavComponent } from './nav.component';
 import { By } from '@angular/platform-browser';
@@ -9,12 +9,14 @@ describe('NavComponent', () => {
 	let component: NavComponent;
 	let fixture: ComponentFixture<NavComponent>;
 
-	beforeEach(async(() => {
-		TestBed.configureTestingModule({
-			imports: [RouterTestingModule.withRoutes([])],
-			declarations: [NavComponent]
-		}).compileComponents();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				imports: [RouterTestingModule.withRoutes([])],
+				declarations: [NavComponent]
+			}).compileComponents();
+		})
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(NavComponent);

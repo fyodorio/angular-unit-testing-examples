@@ -1,6 +1,6 @@
 # Angular 8.0 Unit Testing Examples
 
-I use this project to test different concepts of unit testing the Angular applications. BTW, you can find decent unit testing styleguide for Angular in corresponding [repository nearby](https://github.com/loenko/unit-testing-styleguide).
+I use this project to test different concepts of unit testing the Angular applications. BTW, you can find decent unit testing styleguide for Angular in corresponding [repository nearby](https://github.com/fyodorio/unit-testing-styleguide).
 
 ![unit-testing](https://cdn-images-1.medium.com/max/1600/1*9S01ivk7N1fkh4Tj3MqZgg.gif)
 

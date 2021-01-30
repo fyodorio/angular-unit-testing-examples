@@ -1,4 +1,4 @@
-import {FormBuilder, Validators, FormGroup} from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 export class TodoFormComponent {
 	form: FormGroup;

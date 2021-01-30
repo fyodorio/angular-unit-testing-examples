@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
 import { By } from '@angular/platform-browser';
@@ -10,14 +10,16 @@ describe('AppComponent', () => {
 	let component: AppComponent;
 	let fixture: ComponentFixture<AppComponent>;
 
-	beforeEach(async(() => {
-		TestBed.configureTestingModule({
-			imports: [RouterTestingModule.withRoutes([])],
-			declarations: [AppComponent /*, NavComponent*/],
-			// the fast way to pass directive/component existence/import check - NavComponent here, without import
-			schemas: [NO_ERRORS_SCHEMA]
-		}).compileComponents();
-	}));
+	beforeEach(
+		waitForAsync(() => {
+			TestBed.configureTestingModule({
+				imports: [RouterTestingModule.withRoutes([])],
+				declarations: [AppComponent /*, NavComponent*/],
+				// the fast way to pass directive/component existence/import check - NavComponent here, without import
+				schemas: [NO_ERRORS_SCHEMA]
+			}).compileComponents();
+		})
+	);
 
 	beforeEach(() => {
 		fixture = TestBed.createComponent(AppComponent);

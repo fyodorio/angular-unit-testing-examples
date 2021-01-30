@@ -26,7 +26,7 @@ xdescribe('VoterComponent', () => {
 			// When testing components, think of them as a black box or a DVD player. When we press
 			// the play button on a DVD player, we see the small monitor showing the play icon and the
 			// movie starts to play. We don't care about what is happening inside the DVD player in
-			// hundrds of ICs, transistors, etc. By the same token, we don't about the value of individual
+			// hundreds of ICs, transistors, etc. By the same token, we don't about the value of individual
 			// properties in a component. We care about what is rendered on the view (or the public API
 			// of a component). Now, in this case you can argue that "myVote" is part of the public API
 			// because it is an input property and we set it from the outside. That is a valid argument.

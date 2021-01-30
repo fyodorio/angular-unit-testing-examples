@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, NgModule} from '@angular/core';
 
 import { UserService } from './user.service';
 
+@Component({
+	template: ``
+})
 export class UsersComponent implements OnInit {
 	users: any /*[]*/;
 
@@ -23,3 +26,9 @@ export class UsersComponent implements OnInit {
 		}
 	}
 }
+
+@NgModule({
+	declarations: [UsersComponent],
+	providers: [UserService]
+})
+export class UsersModule {}
