@@ -7,7 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
-	"sonar": "sonar-scanner",
+    "sonar": "sonar-scanner",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -22,6 +22,7 @@
     "@angular/router": "~11.1.1",
     "core-js": "^2.5.4",
     "rxjs": "~6.6.3",
+    "sonar-scanner": "^3.1.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },
