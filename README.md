@@ -1,5 +1,7 @@
 # Angular Unit Testing Examples
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=vaishalim-optimus_angular-unit-testing-examples&metric=alert_status)](https://sonarcloud.io/dashboard?id=vaishalim-optimus_angular-unit-testing-examples)
+
 I use this project to test different concepts of unit testing the Angular applications. BTW, you can find decent unit testing styleguide for Angular in corresponding [repository nearby](https://github.com/fyodorio/unit-testing-styleguide).
 
 ![unit-testing](https://cdn-images-1.medium.com/max/1600/1*9S01ivk7N1fkh4Tj3MqZgg.gif)
